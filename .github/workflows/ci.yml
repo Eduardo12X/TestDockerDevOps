@@ -1,19 +1,19 @@
 name: CI com Docker
 
 on:
-	push:
-	pull_request:
+ push:
+ pull_request:
 
 jobs:
-	teste:
-		runs-on: ubuntu-latest
+ teste:
+  runs-on: ubuntu-latest
 
-	steps:
-		- name: Baixar código
-		uses: actions/checkout@v4
+  steps:
+   - name: Baixar código
+     uses: actions/checkout@v4
 
-		- name: Construir imagem Docker
-		run: docker build -t meu-projeto .
+   - name: Construir imagem Docker
+     run: docker build -t meu-projeto .
 
-		- name: Executar testes
-		run: docker run --rm meu-projeto
+   - name: Executar testes
+     run: docker run --rm meu-projeto
